@@ -1,0 +1,17 @@
+# Virtual environment
+venv
+# Default cache folder
+cache/
+
+# Dataset
+jhu_crowd_v2.0/
+
+# Logs
+lightning_logs/
+
+# Checkpoints directory
+checkpoints
+
+.ipynb_checkpoints/
+
+__pycache__/
