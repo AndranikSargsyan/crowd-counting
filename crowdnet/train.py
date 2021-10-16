@@ -32,7 +32,7 @@ class LitCrowdNet(pl.LightningModule):
         return self.model(images)
 
     def configure_optimizers(self) -> Dict[str, Any]:
-        optimizer = torch.optim.AdamW(self.model.parameters(), 1e-5)
+        optimizer = torch.optim.AdamW(self.model.parameters(), 5e-6)
 
         return {
             "optimizer": optimizer,
@@ -76,7 +76,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset-root", type=Path, help="Path to JHU Crowd++ dataset.", default="./jhu_crowd_v2.0")
     parser.add_argument("--checkpoints-dir", type=Path, help="Dir to save checkpoints in.", default="./checkpoints")
-    parser.add_argument("--max-epochs", type=int, help="Maximum number of epochs.", default=15)
+    parser.add_argument("--max-epochs", type=int, help="Maximum number of epochs.", default=50)
     return parser.parse_args()
 
 
